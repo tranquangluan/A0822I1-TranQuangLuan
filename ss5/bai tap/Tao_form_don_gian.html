@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đơn giản</title>
+    <style>
+        .hobby{
+            display: flex;
+            min-width: 10px;
+        }
+        .form{
+            padding: 8px;
+            display: flex;
+        }
+        .add{
+            min-width: 70px;
+            display: flex;
+            flex-direction: row-reverse;
+            padding-right: 10px;
+        }
+        .wufoo{
+            background-color : darkkhaki;
+        }
+        .b2{
+            min-width: 70px;
+            padding-right: 20px;
+            margin-left: 5px;
+        }
+        .form2{
+            display: flex;
+        }
+    </style>
+</head>
+
+<body style="background-color: aqua">
+
+
+
+<form style="background-color: white" action="" method="get">
+    <h1 style="background-color: orangered; color: white; text-align: center">SỞ THÍCH CỦA BẠN</h1>
+    <div class="form">
+        <label class="add" for="name">Họ và tên</label>
+        <input class="login" type="text" name="yourname">
+    </div>
+    <div class="form">
+        <label class="add" for="email">Email</label>
+        <input class="login" type="text" name="email">
+    </div>
+    <div class="hobby" style="margin-left: 30px">Sở thích <div>
+        <input type="checkbox" name="hobby" value="sport">Thể thao
+        <input type="checkbox" name="hobby" value="music">Âm nhạc
+        <input type="checkbox" name="hobby" value="read book">Đọc sách <br>
+        <input type="checkbox" name="hobby" value="surf the web">Lướt wed
+        <input type="checkbox" name="hobby" value="play game">Chơi game
+        <input type="checkbox" name="hobby" value="film">Điện ảnh <br>
+        <input type="checkbox" name="hobby" value="travel">Du lịch <br>
+    </div>
+    </div>
+    <button style="margin-left: 86px;" type="submit">Gửi thông tin</button>
+    <button type="reset">Nhập lại</button>
+</form>
+
+
+
+
+
+
+
+
+<form action="" method="get" class = "wufoo">
+    <h1 style="background-color: aquamarine; color: blue">ĐĂNG KÝ HỌC VIÊN</h1>
+    <div>
+        <div class="form2">
+            <lable class="b2"> Họ và tên</lable>
+            <input type="text" name="yourname"> <br>
+        </div>
+        <div class="form2">
+            <lable class="b2">Ngày sinh</lable>
+            <input type="text" name="yourDoB"><br>
+        </div>
+        <div class="form2">
+            <lable class="b2">Giới tính</lable>
+            <input type="radio" name="gender" value="men">Nam
+            <input type="radio" name="gender" value="women">Nữ <br>
+        </div>
+        <div class="form2">
+            <lable class="b2">Địa chỉ</lable>
+            <input type="text" name="address">
+        </div>
+        <div class="form2">
+            <lable class="b2">Lớp</lable>
+            <select name="class">
+                <option value="">-Chọn lớp-</option>
+                <option value="1">Lớp 1</option>
+                <option value="2">Lớp 2</option>
+                <option value="3">Lớp 3</option>
+                <option value="4">Lớp 4</option>
+            </select>
+        </div>
+        <div class="form2">
+            <lable class="b2">Email</lable>
+            <input type="text" name="email">
+        </div>
+        <div class="form2">
+            <lable class="b2">Điện thoại</lable>
+            <input type="number" name="số điện thoại">
+        </div>
+
+        <button style="margin-left: 95px; " type="submit">Đăng ký</button>
+        <button type="reset">Nhập lại</button>
+    </div>
+</form>
+</body>
+</html>
