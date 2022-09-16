@@ -3,35 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Ứng dụng chuyển đổi tiền tệ</title>
+    <style>
+        .head{
+            padding-left: 70px;
+            padding-right: 20px;
+        }
+    </style>
 </head>
 <body>
-    <input id="physics" type="text">
-    <span 2>
-        <span>From Currency</span>
-        <select>
-            <option value="vietnam">VietNam</option>
-            <option value="usa">Usa</option>
-            <option value="lao">Lao</option>
+
+        <label class="head">Amount</label>
+        <label class="head">From Currency</label>
+        <label class="head" style="padding-right: 60px">To Currency</label>
+        <button style="background-color: blueviolet; color: white" onclick="result()">Convert</button>
+        <br>
+        <input id="input" type="text">
+        <select id="select1" style="margin-left: 35px; padding-right: 30px" >
+            <option value="VND">VietNam</option>
+            <option value="USD">USD</option>
+            <option value="USD*">USD*</option>
         </select>
-    </span>
-    <span 2>
-        <span>To Currency</span>
-        <select>
-            <option value="vietnam">VND</option>
-            <option value="usa">USD</option>
-            <option value="ThaiLan">BAC</option>
+        <select id="select2" style="margin-left: 70px ;padding-right: 40px">
+            <option value="USD">USD</option>
+            <option value="VND">VietNam</option>
+            <option value="USD*">USD*</option>
         </select>
-    </span>
-    <button style="background-color: blueviolet" onclick="result()">Convert</button>
     <br>
     <p style="color: blue" id="result">Result : </p>
 
 <script>
-
     function result(){
-        let result = @@ ;
-        document.getElementById("result").innerText ="Result : " + @@;
+        let input = document.getElementById("input").value;
+        let select1 = document.getElementById("select1").value;
+        let select2 = document.getElementById("select2").value;
+        if(select1 == select2){
+            document.getElementById("result").innerText = "Result : " + input + " " + select2;
+        }
+        if(select1 == "VND" && select2 == "USD"){
+            document.getElementById("result").innerText = "Result : " + input / 23000 + " " + select2 ;
+        }
+        if(select1 == "VND" && select2 == "USD*"){
+            document.getElementById("result").innerText = "Result : " + input / 35000 + " " + select2;
+        }
+        if(select1 == "USD" && select2 == "VND"){
+            document.getElementById("result").innerText = "Result : " + input * 23000 + " " + select2;
+        }
+        if(select1 == "USD" && select2 == "USD*"){
+            document.getElementById("result").innerText = "Result : " + input / 23000 * 35000 + " " + select2;
+        }
+        if(select1 == "USD*" && select2 == "USD"){
+            document.getElementById("result").innerText = "Result : " + input / 35000 * 23000 + " " + select2;
+        }
+        if(select1 == "USD*" && select2 == "VND"){
+            document.getElementById("result").innerText = "Result : " + input / 35000 + " " + select2;
+        }
     }
 </script>
+
 </body>
 </html>

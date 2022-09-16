@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+    <h1>Caculator</h1>
+    <input id="input1" type="text">
+    <input id="input2" type="text">
+    <br>
+    <br>
+    <button  onclick="result1()">Addition(+)</button>
+    <button  onclick="result2()">Subtraction(-)</button>
+    <button  onclick="result3()">Multiplication(x)</button>
+    <button  onclick="result4()">Division(/)</button>
+
+    <p id="result">Result Division: </p>
+
+<script>
+
+    function result1(){
+        let input1 = +document.getElementById("input1").value;
+        let input2 = +document.getElementById("input2").value;
+        document.getElementById("result").innerText = "Result Division: " + (input1 + input2);
+    }
+    function result2(){
+        let input1 = +document.getElementById("input1").value;
+        let input2 = +document.getElementById("input2").value;
+        document.getElementById("result").innerText = "Result Division: " + (input1 - input2);
+    }
+    function result3(){
+        let input1 = +document.getElementById("input1").value;
+        let input2 = +document.getElementById("input2").value;
+        document.getElementById("result").innerText = "Result Division: " + (input1 * input2);
+    }
+    function result4(){
+        let input1 = +document.getElementById("input1").value;
+        let input2 = +document.getElementById("input2").value;
+        document.getElementById("result").innerText = "Result Division: " + (input1 / input2);
+    }
+</script>
+</body>
+</html>
