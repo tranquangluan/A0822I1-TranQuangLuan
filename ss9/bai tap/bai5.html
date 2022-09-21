@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let test = +prompt("Nhập vào số điểm bài kiểm tra: ");
+    let midTermTest = +prompt("Nhập vào số điểm bài kiểm tra thường kỳ: ");
+    let finalTest = +prompt("Nhập vào số điểm bài kiểm tra cuối kỳ: ");
+    let mediumScore = ((test*15/100)+(midTermTest*35/100)+(finalTest*50/100))
+    alert(mediumScore);
+    if (mediumScore>=8.0) {
+        alert("Được học lực giỏi!!!");
+    } else if(mediumScore>=6.5) {
+        alert("Được học lực khá!!!");
+    }else if(mediumScore>=5) {
+        alert("Được học lực trung bình!!!");
+    }else{
+        alert("Được học lực kém!!!");
+    }
+</script>
+</body>
+</html>

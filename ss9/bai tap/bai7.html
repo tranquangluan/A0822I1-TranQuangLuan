@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script>
+    let minutes = +prompt("Nhập vào doanh số phút gọi: ");
+    const mandatoryFee = 25000;
+    if (minutes == 0) {
+        alert("Cước điện thoại là: " + mandatoryFee + "VNĐ");
+    } else if (minutes <= 50) {
+        alert("Cước điện thoại là: " + eval(minutes * 600 + mandatoryFee)+"VNĐ");
+    } else if (minutes <= 200) {
+        alert("Cước điện thoại là: " + eval(50 * 600 + (minutes - 50) * 400 + mandatoryFee)+"VNĐ");
+    } else {
+        alert("Cước điện thoại là: " + eval(50 * 600 + 150 * 400 + (minutes - 200) * 200 + mandatoryFee)+"VNĐ");
+    }
+</script>
+</body>
+</html>
