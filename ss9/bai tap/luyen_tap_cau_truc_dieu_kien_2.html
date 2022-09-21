@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02 </title>
+</head>
+<body>
+<h1>Bài 1-Chuyển từ độ C sang độ F.</h1>
+<button onclick="bai1()">Giải bài 1</button>
+<h1>Bài 2-Chuyển từ mét sang feet:</h1>
+<button onclick="bai2()">Giải bài 2</button>
+<h1>Bài 3-Tính diện tích hình vuông khi biết cạnh a.</h1>
+<button onclick="bai3()">Giải bài 3</button>
+<h1>Bài 4-Tính diện tích hình chữ nhật khi biết 02 cạnh a, b.</h1>
+<button onclick="bai4()">Giải bài 4</button>
+<h1>Bài 5-Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h1>
+<button onclick="bai5()">Giải bài 5</button>
+<h1>Bài 6-Giải phương trình bậc 1.</h1>
+<button onclick="bai6()">Giải bài 6</button>
+<h1>Bài 7-Giải phương trình bậc 2.</h1>
+<button onclick="bai7()">Giải bài 7</button>
+<h1>Bài 8-Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ
+    120 và lơn hơn 0.</h1>
+<button onclick="bai8()">Giải bài 8</button>
+<h1>Bài 9-Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một
+    tam giác là:</h1>
+<button onclick="bai9()">Giải bài 9</button>
+<h1>Bài 10-Viết chương trình tính giá điện.</h1>
+<button onclick="bai10()">Giải bài 10</button>
+<h1>Bài 11-Viết chương trình tính thuế thu nhập cá nhân.</h1>
+<button onclick="bai11()">Giải bài 11</button>
+<h1>Bài 12-Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi
+    xuất hàng tháng.</h1>
+<button onclick="bai12()">Giải bài 12</button>
+<script>
+    function bai1() {
+        let celsius = +prompt("Nhập vào nhiệt độ C: ");
+        let fahrenheit = celsius * 9 / 5 + 32;
+        alert(celsius + " độ C =" + fahrenheit + " độ F");
+    }
+
+    function bai2() {
+        let meter = +prompt("Nhập vào số mét: ");
+        alert("chuyển từ " + meter + "mét = " + (meter * 3.2808) + "feet");
+    }
+
+    function bai3() {
+        let a = +prompt("Nhập vào độ dài cạnh của hình vuông: ")
+        alert("Diện tích của hình vuông là: S = " + (a * a));
+    }
+
+    function bai4() {
+        let firstEdge = +prompt("Nhập vào độ dài cạnh thứ nhất: ")
+        let secondEdge = +prompt("Nhập vào độ dài cạnh thứ hai: ")
+        alert("Diện tích của hình chữ nhật là: S = " + (firstEdge * secondEdge));
+    }
+
+    function bai5() {
+        let firstEdge = +prompt("Nhập vào độ dài cạnh kề thứ nhất: ")
+        let secondEdge = +prompt("Nhập vào độ dài cạnh kề thứ hai: ")
+        alert("Diện tích của hình tam giác vuông là: S = " + (1 / 2 * firstEdge * secondEdge));
+    }
+
+    function bai6() {
+        let a = +prompt("Nhập vào hệ số thứ nhất: ");
+        let b = +prompt("Nhập vào hệ số thứ hai: ");
+        if (a == 0) {
+            if (b == 0) {
+                alert("Phương trình vô số nghiệm!");
+            } else {
+                alert("Phương trình vô nghiệm!");
+            }
+        } else {
+            alert("Phương trình có nghiệm là: x = " + (-b / a));
+        }
+    }
+
+    function bai7() {
+        let a = +prompt("Nhập vào hệ số thứ nhất: ");
+        let b = +prompt("Nhập vào hệ số thứ hai: ");
+        let c = +prompt("Nhập vào hệ số thứ ba: ");
+        let delta = b * b - 4 * a * c;
+        if (a == 0) {
+            if (b == 0) {
+                if (c == 0) {
+                    alert("Phương trình vô số nghiệm!");
+                } else {
+                    alert("Phương trình vô nghiệm!");
+                }
+            } else {
+                alert("Phương trình có nghiệm là: x = " + (-c / b));
+            }
+        } else {
+            if (delta > 0) {
+                alert("Phương trình có 2 nghiệm phân biệt là: x1 = " + ((-b + Math.sqrt(delta)) / (2 * a)) + " ;    x2 = " + ((-b - Math.sqrt(delta)) / (2 * a)));
+            } else if (delta == 0) {
+                alert("Phương trình có 1 nghiệm kép là: x = " + (-b / (2 * a)));
+            } else {
+                alert("Phương trình vô nghiệm!");
+            }
+        }
+    }
+
+    function bai8() {
+        let age = +prompt("Nhập vào số tuổi :");
+        if (0 < age < 120) {
+            alert("Đây là tuổi của một người!!!");
+        } else {
+        }
+        alert("Đây không phải là tuổi của một người!!!");
+    }
+
+    function bai9() {
+        let firstEdge = +prompt("Nhập vào độ dài cạnh thứ nhất: ")
+        let secondEdge = +prompt("Nhập vào độ dài cạnh thứ hai: ")
+        let thirdEdge = +prompt("Nhập vào độ dài cạnh thứ ba: ")
+        if (firstEdge > 0 && secondEdge > 0 && thirdEdge > 0 && firstEdge + secondEdge > thirdEdge && firstEdge + thirdEdge > secondEdge && secondEdge + thirdEdge > firstEdge) {
+            alert("Đây là 3 cạnh của một tam giác!");
+        } else {
+            alert("Đây không phải là 3 cạnh của một tam giác!");
+        }
+
+    }
+
+    function bai10() {
+        let electricNumber = +prompt("Nhập vào số chữ điện đã sử dụng: ");
+
+        if (minutes <= 50) {
+            alert("Tiền điện phải trả là: " + eval(electricNumber * 1678) + "VNĐ");
+        } else if (minutes <= 100) {
+            alert("Tiền điện phải trả là: " + eval(50 * 1678 + (electricNumber - 50) * 1734) + "VNĐ");
+        } else if (minutes <= 200) {
+            alert("Tiền điện phải trả là: " + eval(50 * 1678 + 50 * 1734 + (electricNumber - 100) * 2014) + "VNĐ");
+        } else if (minutes <= 300) {
+            alert("Tiền điện phải trả là: " + eval(50 * 1678 + 50 * 1734 + 100 * 2014 + (electricNumber - 200) * 2536) + "VNĐ");
+        } else if (minutes <= 400) {
+            alert("Tiền điện phải trả là: " + eval(50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (electricNumber - 300) * 2834) + "VNĐ");
+        } else {
+            alert("Tiền điện phải trả là: " + eval(50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (electricNumber - 400) * 2927) + "VNĐ");
+        }
+    }
+
+    function bai11() {
+        let salary = +prompt("Nhập vào số lương: ");
+        if (salary <= 10000000) {
+            alert("Thuế phải trả là: " + (salary * 8 / 100) + "VNĐ");
+        } else {
+            alert("Thuế phải trả là: " + (salary * 15 / 100) + "VNĐ");
+        }
+    }
+
+    function bai12() {
+        let money = +prompt("Nhập vào số tiền ban đầu :");
+        let month = +prompt("Nhập vào số tháng cho vay :");
+        let rate = +prompt("Nhập vào lãi xuất hàng tháng :");
+        alert("Lãi ngân hàng là : " + (money*(1+rate)^month));
+    }
+
+</script>
+</body>
+</html>
