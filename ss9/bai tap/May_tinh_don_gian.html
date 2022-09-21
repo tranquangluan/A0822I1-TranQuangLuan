@@ -2,9 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Máy tính đơn giản</title>
+    <style>
+        .item {
+            width: 30px;
+            height: 30px;
+            margin-left: 5px;
+            margin-bottom: 10px;
+            color: blue;
+        }
+
+        .input {
+            background-color: white;
+            width: 160px;
+            height: 25px;
+            border: solid 1px;
+            text-align: right;
+            padding-right: 5px;
+            padding-top: 6px;
+        }
+
+    </style>
 </head>
 <body>
-$END$
+
+<div class="input"></div>
+<br>
+<button class="item th1">1</button>
+<button class="item th1">2</button>
+<button class="item th1">3</button>
+<button class="item th1">+</button>
+<br>
+<button class="item th1">4</button>
+<button class="item th1">5</button>
+<button class="item th1">6</button>
+<button class="item th1">-</button>
+<br>
+<button class="item th1">7</button>
+<button class="item th1">8</button>
+<button class="item th1">9</button>
+<button class="item th1">x</button>
+<br>
+<button class="item th1">C</button>
+<button class="item th1">0</button>
+<button class="item th1">=</button>
+<button class="item th1">/</button>
+
+
+<script>
+    let input = document.querySelector('.input');
+    let items = Array.from(document.querySelectorAll('.item'));
+    items.forEach(function (showresult) {
+        showresult.addEventListener('click', function () {
+            if (input.innerHTML == '0') {
+                input.innerHTML = '';
+            }
+            if (showresult.innerHTML == 'C') {
+                input.innerHTML = '0';
+            } else if (showresult.innerHTML == '=') {
+                input.innerHTML = eval(input.innerHTML);
+            } else if (showresult.innerHTML == 'x') {
+                input.innerHTML += '*';
+            } else{
+                input.innerHTML += showresult.innerHTML;
+            }
+        })
+    })
+
+</script>
 </body>
 </html>

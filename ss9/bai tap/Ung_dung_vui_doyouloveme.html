@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Ứng dụng vui DoYouLoveMe</title>
 </head>
 <body>
-$END$
+
+    <h1 style="">Do you love me?</h1>
+    <button onclick="clickYes()">YES</button>
+    <button id="size" style="position:absolute; top : 300px; left: 300px " onmouseover="noHover()">NO</button>
+    <script>
+        function clickYes() {
+            alert("<3");
+        }
+        function noHover() {
+            let x = Math.round(Math.random() * window.innerWidth);
+            let y = Math.round(Math.random() * window.innerHeight);
+            document.getElementById("size").style.left = x + 'px';
+            document.getElementById("size").style.top = y + 'px';
+        }
+    </script>
 </body>
 </html>
