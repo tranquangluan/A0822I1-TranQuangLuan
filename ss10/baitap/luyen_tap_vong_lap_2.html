@@ -50,13 +50,42 @@
     }
 
     function bai3() {
-        // for (let i=1;i<=5;i++){
-        //     for (let j=1;j<=5;j++){
-        //         if (j=)
-        //         document.write("*");
-        //     }
-        //     document.write("<br>");
-        // }
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j <= i; j++) {
+                document.write("*")
+            }
+            document.write("<br/>")
+        }
+        document.write("<br/>")
+        document.write("<br/>")
+        for (let a = 5; a > 0; a--) {
+            for (let b = 0; b < a; b++) {
+                document.write("*")
+            }
+            document.write("<br/>")
+        }
+        document.write("<br/>")
+        document.write("<br/>")
+        for (let c = 5; c > 0; c--) {
+            for (let d = 1; d < c; d++) {
+                document.write("&nbsp&nbsp")
+            }
+            for (let f = 5 - c; f >= 0; f--) {
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+        document.write("<br/>")
+        document.write("<br/>")
+        for (let x = 5; x > 0; x--) {
+            for (let y = 5 - x; y > 0; y--) {
+                document.write("&nbsp&nbsp")
+            }
+            for (let z = 1; z <= x; z++) {
+                document.write("*")
+            }
+            document.write("<br>")
+        }
 
 
     }
@@ -64,10 +93,14 @@
     function bai4() {
         for (let i = 1; i <= 7; i++) {
             for (let j = 1; j <= 20; j++) {
-                if (i==1||i==7){
-                document.write("*");
-                }else{
-
+                if (i == 1 || i == 7) {
+                    document.write("*");
+                } else {
+                    if (j == 1 || j == 20) {
+                        document.write("*");
+                    } else {
+                        document.write("&nbsp&nbsp")
+                    }
                 }
             }
             document.write("<br>");
@@ -78,7 +111,7 @@
         let money = +prompt("Nhập vào số tiền ban đầu :");
         let month = +prompt("Nhập vào số tháng cho vay :");
         let rate = +prompt("Nhập vào lãi xuất hàng tháng :");
-        alert("Lãi ngân hàng là : " + (money*(1+rate)^month));
+        alert("Lãi ngân hàng là : " + (money * (1 + rate) ^ month));
     }
 
     function bai6() {
