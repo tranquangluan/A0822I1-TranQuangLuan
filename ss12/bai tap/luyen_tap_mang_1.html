@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 1</title>
+</head>
+<body>
+<h1>Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao
+    nhiêu số nguyên lớn hơn hoặc bằng 10.</h1>
+<button onclick="bai1()">Giải bài 1</button>
+<h1>Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+    Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.</h1>
+<button onclick="bai2()">Giải bài 2</button>
+<h1>Bài 3- Viết chương trình khởi tạo mảng số nguyên.
+    Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.</h1>
+<button onclick="bai3()">Giải bài 3</button>
+<h1>Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.</h1>
+<button onclick="bai4()">Giải bài 4</button>
+<h1>Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi.</h1>
+<button onclick="bai5()">Giải bài 5</button>
+<h1>Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
+    Chương trình tìm xem V có nằm trong mảng số nguyên không?
+    Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".</h1>
+<button onclick="bai6()">Giải bài 6</button>
+<h1>Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
+    Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng
+    (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của
+    mảng)</h1>
+<button onclick="bai7()">Giải bài 7</button>
+<h1>Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự
+    giảm dần và hiển thị ra mảng đã được sắp xếp.</h1>
+<button onclick="bai8()">Giải bài 8</button>
+<h1>Bài 9- Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b.
+    Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
+    Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.</h1>
+<button onclick="bai9()">Giải bài 9</button>
+
+
+<script>
+    function bai1() {
+        let array = [3, 13, 5, 15, 7, 27, 6, 36, 9, 49];
+        document.write("Mảng :" + array)
+        document.write("<br>")
+        document.write("Các phần tử lớn hơn 10 trong mảng là :")
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] >= 10) {
+                document.write(array[i] + " ");
+            }
+        }
+    }
+
+    function bai2() {
+        let array = [3, 13, 5, 15, 7, 27, 6, 36, 9, 49];
+        document.write("Mảng :" + array)
+        document.write("<br>")
+        let max = array[0];
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] >= max) {
+                max = array[i];
+            }
+        }
+        document.write("Giá trị lớn nhất của mảng là : " + max)
+        document.write("<br>")
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] == max) {
+                document.write("Vị trí là : " + i);
+            }
+        }
+    }
+
+    function bai3() {
+        let array = [3, 13, 5, 15, 7, 27, 6, 36, 9, 49];
+        document.write("Mảng :" + array)
+        document.write("<br>")
+        let max = array[0];
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] >= max) {
+                max = array[i];
+            }
+            sum += array[i];
+        }
+        document.write("Giá trị lớn nhất của mảng là : " + max)
+        document.write("<br>")
+        document.write("Giá trị trung bình của mảng là : " + (sum / array.length))
+    }
+
+    function bai4() {
+        let n = +prompt("Nhập vào số phần tử của mảng: ")
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            array[i] = +prompt("Nhập phần tử thứ " + i + " :")
+        }
+        document.write("Mảng :" + array)
+        document.write("<br>")
+        for (let i = 0; i < n / 2; i++) {
+            let temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
+        document.write(array)
+    }
+
+    function bai5() {
+        let array = [-1, -2, -3, 5, 7, 9];
+        document.write("Mảng :" + array)
+        let temp = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (arr[i] <= 0) {
+                temp++;
+            }
+        }
+        document.write("Số số nguyên âm trong mảng là :" + temp)
+
+    }
+
+    function bai6() {
+        let n = +prompt("Nhập vào số phần tử của mảng: ")
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            array[i] = +prompt("Nhập phần tử thứ " + i + " :")
+        }
+        document.write("Mảng :" + array)
+        document.write("<br>")
+        let V = +prompt("Nhập vào số nguyên V: ")
+        let count = 0;
+        for (let i = 0; i < n; i++) {
+            if (array[i] == V) {
+                count++;
+            }
+        }
+        if (count == 1) {
+            document.write("V is in the array")
+        } else {
+            document.write("V is not in the array")
+        }
+    }
+
+    function bai7() {
+        let n = +prompt("Nhập vào số phần tử của mảng: ")
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            array[i] = +prompt("Nhập phần tử thứ " + i + " :")
+        }
+        document.write("Mảng :" + array)
+        document.write("<br>")
+        let V = +prompt("Nhập vào số nguyên V: ")
+        let count = 0;
+        for (let i = 0; i < n; i++) {
+            if (array[i] == V) {
+                count++;
+            }
+        }
+        if (count != 0) {
+            document.write("V is in the array");
+            for (let i = 0; i < n - 1; i++) {
+                if (array[i] == V) {
+                    for (let j = i; j < n - 1; j++) {
+                        array[j] = array[j + 1];
+                    }
+                    i--;
+                    array[n - 1] = 0;
+                }
+            }
+            document.write("<br>")
+            document.write("Mảng đã xóa :" + array)
+        } else {
+            document.write("V is not in the array")
+        }
+    }
+    function bai8() {
+        let n = +prompt("Nhập vào số phần tử của mảng: ")
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            array[i] = +prompt("Nhập phần tử thứ " + i + " :")
+        }
+        document.write("Mảng :" + array)
+        document.write("<br>")
+        let temp;
+        for (let i = 0; i < n; i++) {
+            for (let j = 0; j < n; j++) {
+                if (array[j]<array[i]){
+                    temp = array[i]
+                    array[i]=array[j]
+                    array[j]=temp
+                }
+            }
+        }
+        document.write("Mảng sau khi sắp xếp giảm dần là : "+ array)
+    }
+    function bai9() {
+        let length1 = +prompt("Nhập vào số phần tử của mảng a: ")
+        let a = [];
+        for (let i = 0; i < length1; i++) {
+            a[i] = +prompt("Nhập phần tử thứ " + i + " :")
+        }
+        document.write("Mảng a:" + a)
+        document.write("<br>")
+        let length2 = +prompt("Nhập vào số phần tử của mảng b: ")
+        let b = [];
+        for (let i = 0; i < length2; i++) {
+            b[i] = +prompt("Nhập phần tử thứ " + i + " :")
+        }
+        document.write("Mảng b:" + b)
+        document.write("<br>")
+        let c = new Array(20);
+        c=a.concat(b);
+        document.write("Mảng c:" +c)
+    }
+</script>
+</body>
+</html>
