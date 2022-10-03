@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Từ điển</title>
+    <title>tudien</title>
 </head>
 <body>
-
+<h6>Nhập vào từ cần tìm kiếm : </h6>
+<input type="text" placeholder="Nhập từ tiếng anh" id="english" onkeyup="engLish()">
+<div id="result"></div>
+<script>
+    let englishWord = ["hello", "good morning", "goodbye"];
+    let vietnamWord = ["xin chào!", "chào buổi sáng!", "tạm biệt!"];
+    function engLish() {
+        let index=-1;
+        document.getElementById("english").value=document.getElementById("english").value.toLowerCase();
+        let myWord = document.getElementById("english").value;
+        for (let i = 0; i < englishWord.length; i++) {
+            if (myWord == englishWord[i]) {
+                index=i;
+                document.getElementById("result").innerText = vietnamWord[index];
+            }
+        }
+        if (index == -1){
+            document.getElementById("result").innerText = " Không tìm thấy"
+        }
+    }
+</script>
 </body>
 </html>

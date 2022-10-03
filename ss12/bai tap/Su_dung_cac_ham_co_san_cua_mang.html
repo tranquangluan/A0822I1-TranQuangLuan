@@ -5,6 +5,59 @@
     <title>Sử dụng các hàm có sẵn của mảng</title>
 </head>
 <body>
+<h1>bài 1</h1>
+<button onclick="bai1()">Giải bài 1</button>
+<h1>bài 2</h1>
+<button onclick="bai2()">Giải bài 2</button>
+<h1>bài 3</h1>
+<button onclick="bai3()">Giải bài 3</button>
+<script>
+    function bai1(){
+        let myColor = ["Red", "Green", "White", "Black"];
+        document.write(myColor.join())
+    }
+    function bai2() {
+        let num=window.prompt();
+        let str = num.toString();
+        let result = [str[0]];
 
+        for(let x=1; x<str.length; x++)
+        {
+            if((str[x-1]%2 === 0)&&(str[x]%2 === 0))
+            {
+                result.push('-', str[x]);
+            }
+            else
+            {
+                result.push(str[x]);
+            }
+        }
+        document.write(result.join(''));
+    }
+    function bai3() {
+        let str = 'The Quick Brown Fox';
+        const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        const result = [];
+
+        for(let x=0; x<str.length; x++)
+        {
+            if(UPPER.includes(str[x]))
+            {
+                result.push(str[x].toLowerCase());
+            }
+            else if(LOWER.includes(str[x]))
+            {
+                result.push(str[x].toUpperCase());
+            }
+            else
+            {
+                result.push(str[x]);
+            }
+        }
+        document.write(result.join(''));
+    }
+
+</script>
 </body>
 </html>
