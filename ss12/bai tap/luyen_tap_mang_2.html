@@ -6,5 +6,116 @@
 </head>
 <body>
 
+<h1>Bài 1- Viết chương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn, in ra các phần tử trong mảng.
+    Chú ý: Sử dụng vòng lặp for lồng nhau</h1>
+<button onclick="bai1()">Giải bài 1</button>
+<h1>Bài 2- Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược.
+    Ví dụ, nếu một mảng chứa các ký tự [ 'c', 's', 'c', '2', '6', '1' ] sau khi thực hiện đảo ngược sẽ là "162csc"</h1>
+<button onclick="bai2()">Giải bài 2</button>
+<h1>Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng.
+    Chương trình này đếm số ký tự số trong mảng. </h1>
+<button onclick="bai3()">Giải bài 3</button>
+<h1>Bài 4: Viết một chương trình để đếm số từ trong một chuỗi</h1>
+<button onclick="bai4()">Giải bài 4</button>
+<h1>Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.</h1>
+<button onclick="bai5()">Giải bài 5</button>
+<h1>Bài 6: Viết chương trình nhập vào một mảng ký tự,
+    tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )</h1>
+<button onclick="bai6()">Giải bài 6</button>
+
+<script>
+    function bai1() {
+        let a = [[1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]];
+
+        for (let i in a) {
+            document.write("row " + i);
+            for (let j in a[i]) {
+                document.write("<br>")
+                document.write(" " + a[i][j]);
+            }
+            document.write("<br>")
+        }
+    }
+
+    function bai2() {
+        let arr = ['c', 's', 'c', '2', '6', '1'];
+        for (let i = 0; i < arr.length / 2; i++) {
+            let temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        document.write(arr)
+
+    }
+
+    function bai3() {
+        function is_Numeric(num) {
+            return !isNaN(parseFloat(num)) && isFinite(num);
+        }
+
+        let str_arr = new Array('a', '2', 'b', '3')
+        let count = 0;
+        for (let i = 0; i < str_arr.length; i++) {
+            if (is_Numeric(str_arr[i])) {
+                count++;
+            }
+        }
+        document.write("Số ký tự số có trong mảng là : " + count)
+
+    }
+
+    function bai4() {
+        let str = '    Tran    Quang   Luan    ';
+        let count = 0;
+
+        if (str[0]==' '){
+            for (let i = 0; i < str.length-1; i++) {
+                //nếu ký tự ở chỉ số thứ i là rỗng và thứ i+1 # rỗng thì số từ tăng lên 1
+                if (str[i]===' ' && str[i+1] !==' '){
+                    count++;
+                }
+            }
+            document.write("Số chữ trong chuỗi là : " + count)
+        }else if(str==' '){
+            // vòng lặp này dùng để xóa ký tự trắng đầu
+            for (let i = 0; i < str.length-1; i++) {
+                if (str[i]===' '){
+                    str.replace(' ', '')
+                    i--;
+                }else{
+                    break
+                }
+            }
+
+            for (let i = 0; i < str.length-1; i++) {
+                //nếu ký tự ở chỉ số thứ i là rỗng và thứ i+1 # rỗng thì số từ tăng lên 1
+                if (str[i]!==' ' && str[i+1] ===' '){
+                    count++;
+                }
+            }
+            document.write("Số chữ trong chuỗi là : " + count)
+        }
+        else{
+            for (let i = 0; i < str.length-1; i++) {
+                //nếu ký tự ở chỉ số thứ i là rỗng và thứ i+1 # rỗng thì số từ tăng lên 1
+                if (str[i]===' ' && str[i+1] !==' '){
+                    count++;
+                }
+            }
+            for (let i = 0; i < str.length; i++) {
+                if (str[i]!==' '){
+                    count++;
+                }
+                break
+            }
+            document.write("Số chữ trong chuỗi là : " + count)
+        }
+    }
+
+</script>
 </body>
 </html>
