@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+    let listStar1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+    let listStar2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+    let input = window.prompt("Enter the name of star : ")
+    find();
+    function find() {
+        let index=-1;
+        for (let i = 0; i < listStar1.length; i++) {
+            if (input == listStar1[i]) {
+                index=i;
+                document.write(listStar2[index]);
+            }
+        }
+        if (index == -1){
+            document.write(" Can't find a star!!!")
+        }
+    }
+</script>
+</body>
+</html>

@@ -5,13 +5,13 @@
     <title>Bài5</title>
 </head>
 <body>
-<input type="text" placeholder="Nhập vào chuỗi thứ 1" id="chuoi1" onkeyup="compare()">
-<input type="text" placeholder="Nhập vào chuỗi thứ 2" id="chuoi2" onkeyup="compare()">
+<input type="text" placeholder="Enter string1" id="string1" onkeyup="compare()">
+<input type="text" placeholder="Enter string2" id="string2" onkeyup="compare()">
 <div id="result"></div>
 <script>
     function compare() {
-        let str1 = document.getElementById("chuoi1").value;
-        let str2 = document.getElementById("chuoi2").value;
+        let str1 = document.getElementById("string1").value;
+        let str2 = document.getElementById("string2").value;
         for (let i = 0; i < str1.length; i++) {
             for (let j = 0; j < str2.length; j++) {
                 if (str1===str2){

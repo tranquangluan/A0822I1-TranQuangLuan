@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 9</title>
+</head>
+<body>
+<script>
+    characterCount()
+    function characterCount() {
+        let arr = ['a', 'b', 'c', 'd', 'a', 'a', 'e']
+        let input = window.prompt("Enter character : ")
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === input){
+                count++;
+            }
+        }
+        if (count != 0){
+            document.write(count)
+        }else{
+            document.write(-1)
+        }
+    }
+</script>
+</body>
+</html>

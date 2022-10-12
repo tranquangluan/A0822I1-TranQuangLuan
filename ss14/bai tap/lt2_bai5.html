@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+
+    minNumber()
+    function minNumber() {
+        let firstNumber = +prompt("Enter the first number : ")
+        let secondNumber = +prompt("Enter the second number : ")
+        let thirdNumber = +prompt("Enter the third number : ")
+        if (firstNumber<=secondNumber && firstNumber<thirdNumber){
+            document.write("The first number is smallest")
+        }else if (secondNumber<thirdNumber){
+            document.write("The second number is smallest")
+        }else {
+            document.write("The third number is smallest")
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 2</title>
+</head>
+<body>
+<button id="result" onclick="tax()">Tax</button>
+<script>
+    function tax() {
+        let salary = +prompt("Enter the salary : ");
+        if (salary <= 7000000) {
+            alert("Tax is: " + (salary * 5 / 100) + "VNĐ");
+        } else if (salary <= 15000000) {
+            alert("Tax is: " + (salary * 10 / 100) + "VNĐ");
+        }else{
+            alert("Tax is: " + (salary * 20 / 100) + "VNĐ");
+        }
+    }
+</script>
+</body>
+</html>

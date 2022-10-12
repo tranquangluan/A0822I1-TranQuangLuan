@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3 vẽ tam gác cân</title>
+</head>
+<body>
+<button id="result" onclick="isosceles_triangle()">Isosceles triangle</button>
+<script>
+    function isosceles_triangle() {
+        let h = +prompt("Enter the height of Isosceles triangle : ")
+        for (let i = 1; i <= 2 * h; i += 2) {
+            for (let j = 2*h - i; j > 0; j--) {
+                document.write("&nbsp")
+            }
+            for (let k = 1; k <= i; k++) {
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+    }
+</script>
+</body>
+</html>
