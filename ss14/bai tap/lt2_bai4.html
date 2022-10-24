@@ -10,14 +10,18 @@
     let b = "a"
     function check(input) {
         if (typeof input === "number"){
-            return document.write("true")
+            return true
+            // return document.write("true")
         }else {
-            return document.write("false")
+            return false
+            // return document.write("false")
         }
     }
-    check(a)
+    // check(a)
+    document.write(check(a))
     document.write("<br>")
-    check(b)
+    // check(b)
+    document.write(check(b))
 
 </script>
 </body>
