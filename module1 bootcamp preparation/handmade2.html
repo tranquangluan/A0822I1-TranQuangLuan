@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="Nhập id" id="id">
+<input type="text" placeholder="Nhập tên sản phẩm" id="tensanpham">
+<input type="text" placeholder="Nhập giá sản phẩm" id="gia">
+<button onclick="themSanPham()">Thêm mới</button>
+<br>
+<span>Số lượng sản phẩm :</span>
+<span id="soluong"></span>
+<div id="hienthi"></div>
+<script>
+    class Product {
+        constructor(id, name, price) {
+            this.id = id
+            this.name = name
+            this.price = price
+        }
+
+        setId(id) {
+            this.id = id
+        }
+
+        getId() {
+            return this.id
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        getName() {
+            return this.name
+        }
+
+        setPrice(price) {
+            this.price = price
+        }
+
+        getPrice() {
+            return this.price
+        }
+    }
+
+    let product1 = new Product(1, "bánh ngọt", 5000)
+    let product2 = new Product(2, "bánh kem", 50000)
+    let product3 = new Product(3, "bánh ", 2000)
+    let listProduct = [product1, product2, product3]
+    display(listProduct);
+
+    function display(listProduct) {
+        let tableProduct = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>ID</th>\n' +
+            '        <th>Name</th>\n' +
+            '        <th>Price</th>\n' +
+            '        <th>Delete</th>\n' +
+            '        <th>Edit</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < listProduct.length; i++) {
+            tableProduct += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + listProduct[i].getId() + '</td>\n' +
+                '        <td>' + listProduct[i].getName() + '</td>\n' +
+                '        <td>' + listProduct[i].getPrice() + '</td>\n' +
+                '        <td>' + '<input type="button" value="delete" onclick="deleteProduct(' + i + ')">' + '</td>\n' +
+                '        <td>' + '<input type="button" value="edit" onclick="editProduct(' + i + ')">' + '</td>\n' +
+                '    </tr>'
+        }
+        tableProduct += '</table>';
+        document.getElementById("hienthi").innerHTML = tableProduct;
+        document.getElementById("soluong").innerHTML = listProduct.length;
+    }
+
+    function themSanPham() {
+        let newId = document.getElementById("id").value;
+        let newName = document.getElementById("tensanpham").value;
+        let newPrice = document.getElementById("gia").value;
+        let newProduct = new Product(newId, newName, newPrice)
+        if (newId != "" && newName != "" && newPrice != "") {
+            listProduct.push(newProduct)
+        }else {
+            alert("MỜi nhập đầy đủ thông tin sản phẩm")
+        }
+        display(listProduct)
+        document.getElementById("id").value = "";
+        document.getElementById("tensanpham").value="";
+        document.getElementById("gia").value = "";
+    }
+
+    function deleteProduct(index) {
+        let deleteProduct = confirm("Bạn có muốn xóa sản phẩm " + listProduct[index].getName())
+        if (deleteProduct) {
+            listProduct.splice(index, 1)
+        }
+        display(listProduct)
+    }
+
+    function editProduct(index) {
+        let newId = prompt("Mời nhập vào mã id mới ", listProduct[index].getId());
+        let newName = prompt("Mời nhập vào tên sản phẩm mới ", listProduct[index].getName());
+        let newPrice = prompt("Mời nhập vào giá của sản phẩm mới ", listProduct[index].getPrice());
+        let newProduct = new Product(newId, newName, newPrice)
+        listProduct[index] = newProduct
+        display(listProduct)
+    }
+
+</script>
+</body>
+</html>

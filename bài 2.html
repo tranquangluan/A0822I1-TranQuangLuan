@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=+prompt("Nhập a =")
+    let b=+prompt("Nhập b =")
+    let c=+prompt("Nhập c =")
+    checkTriangle(a,b,c)
+
+    function checkTriangle(x, y, z) {
+        if (x >= y + z || y >= x + z || z >= x + y) {
+            document.write("không phải là cạnh tam giác")
+        }else if (Math.pow(x,2)+Math.pow(y,2)==Math.pow(z,2) || Math.pow(x,2)+Math.pow(z,2)==Math.pow(y,2) ||Math.pow(y,2)+Math.pow(z,2)==Math.pow(x,2)){
+            document.write("Là 3 cạnh của tam giác vuông")
+        }else{
+            document.write("chỉ là 3 cạnh của một tam giác")
+        }
+    }
+</script>
+</body>
+</html>

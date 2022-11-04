@@ -5,6 +5,28 @@
     <title>Game đoán số</title>
 </head>
 <body>
-    <button>Chơi</button>
+<input type="button" onclick="play()" value="Chơi">
+<script>
+    function play() {
+        let min = +prompt("Nhập khoảng đầu ");
+        let max = +prompt("Nhập khoảng cuối ");
+        let random = Math.floor(Math.random() * (max - min) + min);
+        let guess = +prompt(" What number you wanna get !!!!  ");
+        while (true) {
+            if (guess == random) {
+                alert("Congratulation!!You are so Talen ");
+                alert("Let a new game ");
+                break;
+            } else if (guess < random) {
+                alert("Oh no !!Luck didn't come to you.Try to guess the bigger number... ");
+                guess = +prompt(" Let's Try again ");
+            }else {
+                alert("Oh no !!Luck didn't come to you.Try to guess the smaller number... ");
+                guess = +prompt(" Let's Try again ");
+            }
+
+        }
+    }
+</script>
 </body>
 </html>

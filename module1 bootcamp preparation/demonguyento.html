@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //kiểm tra số nguyên tố in ra n số nguyên tố đầu tiên
+    display(20)
+
+    function display(n) {
+        let count = 0;
+        for (let i = 2; i < 1000; i++) {
+            let temp =1
+            for (let j = 2; j <= Math.sqrt(i); j++) {
+                if (i%j==0){
+                    temp = 0
+                }
+            }
+            if (temp==1){
+                document.write(i+" ")
+                count++
+            }
+            if (count==n){
+                break
+            }
+        }
+    }
+    document.write('<br>')
+
+    //in ra các cố nguyên tố nhỏ hơn n
+    display1(20)
+
+    function display1(a) {
+
+        for (let i = 2; i < a; i++) {
+            let temp = 1
+            for (let j = 2; j <= Math.sqrt(i); j++) {
+                if (i % j == 0) {
+                    temp = 0;
+                }
+            }
+            if (temp == 1) {
+                document.write(i + " ")
+            }
+        }
+    }
+    document.write('<br>')
+    let n = +prompt("Nhập vào số giai thừa cần tính :")
+    document.write(display2(n));
+
+    function display2(a) {
+        if (a <= 1) {
+            return 1;
+        } else {
+            return a * display2(a - 1);
+        }
+    }
+
+
+</script>
+​
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thêm sửa xóa</title>
+</head>
+<body>
+<input type="text" placeholder="Nhập tên sản phẩm" id="sanpham">
+<button onclick="themMoi()">Thêm mới</button>
+<br>
+<span>Số lượng sản phẩm: </span>
+<span id="soluong"></span>
+<div id="hienthi"></div>
+
+<script>
+    let danhsachsp = ["Nokia", "Iphone", "Samsung"]
+    hienthi(danhsachsp)
+    function hienthi(danhsach) {
+        let tableString = '<table border="1">' +
+            '\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Tên</th>\n' +
+            '        <th>Sửa</th>\n' +
+            '        <th>Xoá</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhsach.length; i++) {
+            tableString +='    <tr>\n' +
+                '        <td>'+(i+1)+'</td>\n' +
+                '        <td>'+danhsach[i]+'</td>\n' +
+                '        <td>'+'<button onclick="edit('+i +')">Sửa</button>'+'</td>\n' +
+                '        <td>'+'<button onclick="deleteProduct('+i +')">xóa</button>'+'</td>\n' +
+                '    </tr>'
+        }
+        tableString += '</table>'
+        document.getElementById("hienthi").innerHTML = tableString;
+        document.getElementById("soluong").innerHTML = danhsach.length;
+    }
+    function themMoi() {
+        let sanPhamMoi = document.getElementById("sanpham").value
+        if (sanPhamMoi != ""){
+            danhsachsp.push(sanPhamMoi)
+        }else{
+            alert("mời nhập sản phẩm !!!")
+        }
+        hienthi(danhsachsp)
+        document.getElementById("sanPham").value = "";
+    }
+    function edit(index) {
+        let editSanPham = prompt("Nhập lại tên sản phẩm : ", danhsachsp[index])
+        danhsachsp[index] = editSanPham;
+        hienthi(danhsachsp)
+    }
+
+    function deleteProduct(index) {
+        let xacNhanXoa = confirm("Bạn có muốn xóa sản phẩm " + danhsachsp[index])
+        if (xacNhanXoa){
+            danhsachsp.splice(index,1)
+        }
+        hienthi(danhsachsp)
+    }
+</script>
+</body>
+</html>

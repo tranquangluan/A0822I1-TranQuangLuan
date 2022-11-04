@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 1</title>
+</head>
+<body>
+<script>
+    let longestString
+    let stringName = prompt("Nhập vào một chuỗi : ")
+    stringName = stringName.toLowerCase()
+    let stringArray= stringName.split("")
+
+    // vòng for xóa ký tự trống ở đầu
+    for (let i = 0; i < stringArray.length; i++) {
+        if (stringArray[0]==' '){
+            stringArray.splice(i,1)
+            i--;
+        }else{
+            break
+        }
+    }
+
+    for (let i = 0; i < stringArray.length; i++) {
+        if (stringArray[i]==' ' && stringArray[i+1]==' '){
+            stringArray.splice(i,1)
+            i--;
+        }
+    }
+
+    stringArray[0] = stringArray[0].toUpperCase()
+
+    for (let i = 0; i < stringArray.length; i++) {
+        if (stringArray[i] === ' ' && stringArray[i+1] !== ' '){
+            stringArray[i+1]= stringArray[i+1].toUpperCase()
+        }
+    }
+
+    for (let i = 0; i < stringArray.length; i++) {
+        document.write(stringArray[i])
+    }
+
+    
+
+</script>
+</body>
+</html>
+
+

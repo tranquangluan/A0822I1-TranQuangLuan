@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quanlysanpham</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>ID:<input type="text" id="idInput"></td>
+        <td>NAME:<input type="text" id="nameInput"></td>
+        <td>PRICE:<input type="text" id="priceInput"></td>
+        <td><input type="button" value="Them moi" onclick="addProduct"></td>
+    </tr>
+</table>
+<div id="display"></div>
+<script>
+    class Product{
+        constructor(id,name,price) {
+            this.id=id;
+            this.name=name;
+            this.price=price;
+        }
+        setId(id){
+            this.id=id;
+        }
+        setName(name){
+            this.name=name;
+        }
+        setPrice(price){
+            this.price=price;
+        }
+        getId(){
+            return this.id;
+        }
+        getName(){
+            return this.name;
+        }
+        getPrice(){
+            return this.price;
+        }
+    }
+    let product1 = new Product(1,"mit",1000);
+    let product2 = new Product(2,"quy",1000);
+    let product3 = new Product(3,"messi",1000);
+    let listProducts = [product1,product2,product3];
+    display(listProducts);
+    function display(listProducts){
+        let data='<table border="1">\n' +
+            '  <tr>\n' +
+            '    <th>STT</th>\n' +
+            '    <th>ID</th>\n' +
+            '    <th>NAME</th>\n' +
+            '    <th>PRICE</th>\n' +
+            '    <th>DELETE</th>\n' +
+            '    <th>FIX</th>\n' +
+            '  </tr>';
+        for (let i = 0; i < listProducts.length; i++) {
+            data+='<tr>\n' +
+                '    <td>'+(i+1)+'</td>\n' +
+                '    <td>'+listProducts[i].getId()+'</td>\n' +
+                '    <td>'+listProducts[i].getName()+'</td>\n' +
+                '    <td>'+listProducts[i].getPrice()+'</td>\n' +
+                '    <td><input type="button" value="Delete" onclick="deleteProduct('+i+')"></td>\n' +
+                '    <td><input type="button" value="Fix"></td>\n' +
+                '  </tr>';
+        }
+        data+='</table>';
+        document.getElementById("display").innerHTML=data;
+    }
+    function deleteProduct(index){
+        let isDelete =confirm(" Bạn có chắc muốn xóa sản phẩm "+listProducts[index].getName());
+        if(isDelete){
+            listProducts.splice(index,1);
+        }
+        display(listProducts);
+    }
+    function addProduct(){
+        let newId =document.getElementById("idInput").value;
+        let newName =document.getElementById("nameInput").value;
+        let newPrice =document.getElementById("priceInput").value;
+
+        let newProducts = new Product(newId,newName,newPrice);
+        if (newId != "" && newName !="" && newPrice!=""){
+
+            listProducts.push(newProducts);
+        }
+        display(listProducts);
+        document.getElementById("idNhap").value = "";
+        document.getElementById("nameNhap").value = "";
+        document.getElementById("priceNhap").value = "";
+
+
+    }
+
+</script>
+</body>
+</html>
